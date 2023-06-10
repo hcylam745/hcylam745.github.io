@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import { store, persistor } from "./store";
 import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
+import Header from "./header";
+import Body from "./body";
 
 
 import "./App.css";
@@ -11,9 +13,8 @@ class App extends Component {
     return (
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <div className="container">
-            a
-          </div>
+          <Header/>
+          <Body/>
         </PersistGate>
       </Provider>
     )
