@@ -1,0 +1,60 @@
+.experiencecontainer {
+    width:calc(100% - 60px);
+    padding:30px;
+    padding-top:160px;
+    min-width:240px;
+    max-width:540px;
+}
+
+.experience {
+    color:lightgray;
+    width:100%;
+    display:flex;
+    flex-direction:row;
+}
+
+.timeframe {
+    width:30%;
+    padding-right:15px;
+    text-align:right;
+    margin:0;
+    color:gray;
+}
+
+.experiencebody {
+    width:70%;
+    padding-left:15px;
+    margin:0;
+    display:flex;
+    flex-direction:column;
+}
+
+.experienceheader{
+    width:100%;
+    padding-bottom:15px;
+}
+
+.experiencetext{
+    width:100%;
+    color: #a3a3a3;
+}
+
+.experienceheadersub {
+    color:gray;
+}
+
+.experienceskills{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    margin-top:10px;
+}
+
+.skill {
+    padding:8px;
+    margin:3px;
+    background-color:rgba(133, 98, 245, 0.3);
+    color:#a68aff;
+    border-radius:20px;
+    font-size:12px;
+}

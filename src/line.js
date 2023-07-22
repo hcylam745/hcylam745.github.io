@@ -1,13 +1,13 @@
 import React, {Component} from "react";
 
-import "./App.css"
+import "./line.css"
 
 
 
 class Line extends Component {
     render() {
         return (
-            <div class="outerline">
+            <div class="linediv">
                 <div class="circle">&nbsp;</div>
                 <div class="line">&nbsp;</div>
             </div>

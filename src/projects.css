@@ -1,0 +1,32 @@
+.projectcontainer {
+    padding:30px;
+    padding-top:160px;
+    min-width:240px;
+    max-width:540px;
+}
+
+.projecttext {
+    width:70%;
+    color:#a3a3a3;
+    padding-left:15px;
+}
+
+.projectheader {
+    color:white;
+    padding-bottom:10px;
+}
+
+.project {
+    display:flex;
+    flex-direction:row;
+}
+
+.image {
+    width:100%;
+    border-radius:5px;
+}
+
+.projectimage {
+    padding-right:15px;
+    width:30%;
+}

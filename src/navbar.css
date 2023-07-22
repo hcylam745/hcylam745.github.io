@@ -1,0 +1,56 @@
+.navbar {
+    font-size: 32px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    height:100%;
+    width:70%;
+    display:flex;
+    flex-direction: column;
+    min-width:240px;
+    max-width:480px;
+    margin-left:auto;
+    padding-right:60px;
+    text-align:right;
+}
+
+.headerbuttons {
+    display:flex;
+    flex-direction:column;
+    height:70vh;
+}
+
+.hbutton {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    color:grey;
+    border:0;
+    font-size:20px;
+    padding:10px;
+    text-decoration: none;
+}
+
+.hbutton:hover{
+    color:rgb(170, 170, 170);
+}
+
+.headertext {
+    color:white;
+    padding-bottom:20px;
+}
+
+.myname {
+    font-size:40px;
+    margin:8px;
+    margin-bottom:15px;
+}
+
+.description{
+    font-size:16px;
+    margin:8px;
+    color:#a3a3a3;
+    font-weight:400;
+}
+
+.navcontainer {
+    width:50%;
+}
