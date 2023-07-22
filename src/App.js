@@ -4,6 +4,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Main from "./main";
+import CursorTracker from "./cursortracker"
 
 
 import "./App.css";
@@ -15,7 +16,7 @@ class App extends Component {
         <PersistGate loading={null} persistor={persistor}>
           <BrowserRouter>
             <Routes>
-              <Route path="" element={<Main/>}/>
+              <Route path="" element={<><Main/></>}/>
 {/*              <Route path="/" element={<Header/>}>
                 <Route path='home' element={<Main/>}/>
     <Route path='projects' element={<Projects/>}/> 

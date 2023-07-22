@@ -7,9 +7,9 @@ import "./line.css"
 class Line extends Component {
     render() {
         return (
-            <div class="linediv">
-                <div class="circle">&nbsp;</div>
-                <div class="line">&nbsp;</div>
+            <div className="linediv">
+                <div className="circle">&nbsp;</div>
+                <div className="line">&nbsp;</div>
             </div>
         )
     }
