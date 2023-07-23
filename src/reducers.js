@@ -11,6 +11,12 @@ const reducers = (state = initState, action) => {
                 xPos:action.x_pos,
                 yPos:action.y_pos
             }
+        case 1:
+            // for page height calculations.
+            return {
+                ...state,
+                height:action.height
+            }
         default:
             return state;
     }

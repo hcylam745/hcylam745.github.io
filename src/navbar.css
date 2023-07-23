@@ -2,7 +2,6 @@
     font-size: 32px;
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
-    height:100%;
     width:70%;
     display:flex;
     flex-direction: column;
@@ -16,7 +15,6 @@
 .headerbuttons {
     display:flex;
     flex-direction:column;
-    height:70vh;
 }
 
 .hbutton {
@@ -54,4 +52,6 @@
 .navcontainer {
     width:50%;
     z-index:1;
+    padding-top:8vh;
+    position:fixed;
 }

@@ -1,14 +1,26 @@
 import React, {Component} from "react";
 import Line from "./line";
 
+import { connect } from "react-redux";
+
 import "./body.css"
 import Experience from "./experience";
 import Projects from "./projects";
 
 class Body extends Component {
+    constructor(props) {
+        super(props);
+        this.myRef = React.createRef();
+    }
+    
+    componentDidMount() {
+        const height = this.myRef.current.clientHeight;
+        this.props.dispatch({type:1, height:height});
+    }
+
     render() {
         return (
-            <div className="bodycontainer">
+            <div className="bodycontainer" ref = {this.myRef}>
                 <Line/>
                 <div className="bodytext">
                     <div className="body">
@@ -25,4 +37,4 @@ class Body extends Component {
     }
 }
 
-export default Body;
+export default connect()(Body);

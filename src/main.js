@@ -11,17 +11,23 @@ class Main extends Component {
         super(props);
         this.state = {
             x_pos: 0,
-            y_pos: 0
+            y_pos: 0,
+            height: 0
         }
+        this.myRef = React.createRef();
     }
 
     componentDidMount() {
         this.props.dispatch({type:0, x_pos:0, y_pos:0});
+        const height = this.myRef.current["clientHeight"];
+        this.setState({
+            height:height
+        })
     }
 
-    handleMouseMovement = (pos) => {
-        const posX = pos["nativeEvent"]["clientX"]
-        const posY = pos["nativeEvent"]["clientY"]
+    async handleMouseMovement(pos) {
+        const posX = pos["pageX"];
+        const posY = pos["pageY"];
         this.setState({
             x_pos:posX,
             y_pos:posY
@@ -30,11 +36,12 @@ class Main extends Component {
     }
 
     render() {
+        const {height} = this.state;
         return (
-            <div className="main" onMouseMove={pos=>this.handleMouseMovement(pos)}>
+            <div className="main" ref={this.myRef} onMouseMove={pos=>this.handleMouseMovement(pos)}>
                 <NavBar/>
                 <Body/>
-                <CursorTracker/>
+                <CursorTracker height={height}/>
             </div>
         )
     }
@@ -43,7 +50,8 @@ class Main extends Component {
 const mapStateToProps = state => {
     return {
         x_pos: state.x_pos,
-        y_pos: state.y_pos
+        y_pos: state.y_pos,
+        height: state.height
     }
 }
 

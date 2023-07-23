@@ -13,15 +13,10 @@ class CursorTracker extends Component {
         x_pos:0
     }
 
-    componentDidUpdate() {
-        const {x_pos, y_pos} = this.props;
-    }
-
     render() {
-        const {x_pos, y_pos} = this.props;
-
+        const {x_pos, y_pos, height} = this.props;
         return (
-            <div className="cursortracker" style={{background: "radial-gradient(600px at " + x_pos + "px " + y_pos + "px, rgba(60, 21, 117, 0.3), transparent 70%)"}}>
+            <div className="cursortracker" style={{height:height, background: "radial-gradient(600px at " + x_pos + "px " + y_pos + "px, rgba(60, 21, 117, 0.3), transparent 70%)"}}>
                 &nbsp;
             </div>
         )
