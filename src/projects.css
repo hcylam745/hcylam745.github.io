@@ -1,8 +1,9 @@
 .projectcontainer {
     padding:30px;
-    padding-top:160px;
-    min-width:240px;
-    max-width:540px;
+    min-width:360px;
+    max-width:680px;
+    padding-top:0;
+    padding-bottom:0;
 }
 
 .projecttext {
@@ -19,6 +20,10 @@
 .project {
     display:flex;
     flex-direction:row;
+    margin-bottom:20px;
+    margin-top:20px;
+    padding:20px;
+    border-radius:8px;
 }
 
 .image {
@@ -29,4 +34,17 @@
 .projectimage {
     padding-right:15px;
     width:30%;
+}
+
+.projectline {
+    display:flex;
+    flex-direction:row;
+    padding:30px;
+}
+
+.projecttitle {
+    color:white;
+    padding:10px;
+    font-size:32px;
+    margin-left:-5%;
 }

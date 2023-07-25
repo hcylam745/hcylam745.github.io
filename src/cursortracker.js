@@ -10,13 +10,15 @@ class CursorTracker extends Component {
 
     state = {
         y_pos:0,
-        x_pos:0
+        x_pos:0,
+        min_height:0
     }
 
     render() {
-        const {x_pos, y_pos, height} = this.props;
+        const {x_pos, y_pos} = this.props;
+        let h = document.body.scrollHeight;
         return (
-            <div className="cursortracker" style={{height:height, background: "radial-gradient(600px at " + x_pos + "px " + y_pos + "px, rgba(60, 21, 117, 0.3), transparent 70%)"}}>
+            <div className="cursortracker" style={{height:h, background: "radial-gradient(600px at " + x_pos + "px " + y_pos + "px, rgba(60, 21, 117, 0.3), transparent 70%)"}}>
                 &nbsp;
             </div>
         )

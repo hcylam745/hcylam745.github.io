@@ -12,10 +12,16 @@ const reducers = (state = initState, action) => {
                 yPos:action.y_pos
             }
         case 1:
-            // for page height calculations.
+            // 1 = store height of experience subtitle
             return {
                 ...state,
-                height:action.height
+                experienceHeight: action.experienceHeight
+            }
+        case 2:
+            // 2 = store height of projects subtitle
+            return {
+                ...state,
+                projectsHeight: action.projectsHeight
             }
         default:
             return state;

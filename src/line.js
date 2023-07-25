@@ -10,6 +10,7 @@ class Line extends Component {
             <div className="linediv">
                 <div className="circle">&nbsp;</div>
                 <div className="line">&nbsp;</div>
+                <div className="circle">&nbsp;</div>
             </div>
         )
     }

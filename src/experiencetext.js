@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 
+
 import "./experience.css"
 
 class ExperienceText extends Component {
@@ -10,7 +11,7 @@ class ExperienceText extends Component {
     getSkillsList(skills) {
         var divList = [];
         for (let i = 0; i < skills.length; i++) {
-            divList.push(<div className="skill">{skills[i]}</div>)
+            divList.push(<div className="skill" key={i}>{skills[i]}</div>)
         }
         return divList;
     }

@@ -51,7 +51,9 @@ const mapStateToProps = state => {
     return {
         x_pos: state.x_pos,
         y_pos: state.y_pos,
-        height: state.height
+        height: state.height,
+        experienceHeight: state.experienceHeight,
+        projectsHeight: state.projectsHeight
     }
 }
 
