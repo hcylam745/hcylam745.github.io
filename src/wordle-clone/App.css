@@ -1,0 +1,51 @@
+.container {
+  background-color:#111111;
+  width:100vw;
+  height:100vh;
+  color:rgba(255,255,255,0.8);
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  width:100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.text {
+  flex: 100%;
+  text-align:center;
+  font-weight:bold;
+  font-size:36px;
+}
+
+.whiteline {
+  width:50%;
+  border-bottom: 1px solid rgba(150, 150, 150, 0.6);
+  float:center;
+}
+
+.mainbody {
+  margin-top:100px;
+}
+
+.inputbox {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.box {
+  border: 1px solid rgba(150, 150, 150, 0.6);
+  margin:5px;
+  padding:10px;
+  height:40px;
+  width:40px;
+  background-color:rgb(255,255,255,0);
+  color:white;
+  font-size:40px;
+  caret-color: transparent;
+}

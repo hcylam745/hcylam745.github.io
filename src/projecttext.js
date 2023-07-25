@@ -20,6 +20,12 @@ class ProjectText extends Component {
         element.style.backgroundColor = null;
     }
 
+    linkToWebsite(id) {
+        if (id == "wordle") {
+            window.location.href="/wordle";
+        }
+    }
+
     render() {
         const image = this.props.img;
 
@@ -28,7 +34,7 @@ class ProjectText extends Component {
         const id = this.props.id;
 
         return (
-            <div className="project" id={id} onMouseEnter={()=>this.whiteBorder(id)} onMouseLeave={()=>this.removeBorder(id)} ref = {this.myRef}>
+            <div className="project" id={id} onClick={()=>this.linkToWebsite(id)} onMouseEnter={()=>this.whiteBorder(id)} onMouseLeave={()=>this.removeBorder(id)} ref = {this.myRef}>
                 <div className="projectimage">
                     <img src={image} className="image" alt="Project Image"></img>
                 </div>

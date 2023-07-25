@@ -12,7 +12,7 @@ class ProjectsTitle extends Component {
 
     componentDidMount() {
         let height = this.myRef.current.offsetTop;
-        this.props.dispatch({type:2, projectsHeight:height});
+        this.props.dispatch({type:12, projectsHeight:height});
     }
 
     render() {

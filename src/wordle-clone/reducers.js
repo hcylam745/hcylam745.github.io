@@ -62,25 +62,6 @@ const reducers = (state = initState, action) => {
             ...state,
             update: action.update
         }
-        case 10:
-            // 10 = cursor moved.
-            return {
-                ...state,
-                xPos:action.x_pos,
-                yPos:action.y_pos
-            }
-        case 11:
-            // 11 = store height of experience subtitle
-            return {
-                ...state,
-                experienceHeight: action.experienceHeight
-            }
-        case 12:
-            // 12 = store height of projects subtitle
-            return {
-                ...state,
-                projectsHeight: action.projectsHeight
-            }
         default:
             return state;
     }
