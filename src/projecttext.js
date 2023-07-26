@@ -23,6 +23,8 @@ class ProjectText extends Component {
     linkToWebsite(id) {
         if (id == "wordle") {
             window.location.href="/wordle";
+        } else if (id == "snake") {
+            window.location.href="https://github.com/hcylam745/snakegame"
         }
     }
 
