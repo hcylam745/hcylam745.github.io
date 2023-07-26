@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.778b282d.css",
-    "main.js": "/static/js/main.9ee207ea.js",
-    "static/js/496.45d0c8f1.chunk.js": "/static/js/496.45d0c8f1.chunk.js",
-    "static/media/snake_image.png": "/static/media/snake_image.de772f429cb1bca072ee.png",
-    "static/media/wordle_clone.png": "/static/media/wordle_clone.e3377bf9d67b6a99f8de.png",
-    "index.html": "/index.html",
-    "main.778b282d.css.map": "/static/css/main.778b282d.css.map",
-    "main.9ee207ea.js.map": "/static/js/main.9ee207ea.js.map",
-    "496.45d0c8f1.chunk.js.map": "/static/js/496.45d0c8f1.chunk.js.map"
+    "main.css": "/portfolio/static/css/main.778b282d.css",
+    "main.js": "/portfolio/static/js/main.f8e38db5.js",
+    "static/js/496.45d0c8f1.chunk.js": "/portfolio/static/js/496.45d0c8f1.chunk.js",
+    "static/media/snake_image.png": "/portfolio/static/media/snake_image.de772f429cb1bca072ee.png",
+    "static/media/wordle_clone.png": "/portfolio/static/media/wordle_clone.e3377bf9d67b6a99f8de.png",
+    "index.html": "/portfolio/index.html",
+    "main.778b282d.css.map": "/portfolio/static/css/main.778b282d.css.map",
+    "main.f8e38db5.js.map": "/portfolio/static/js/main.f8e38db5.js.map",
+    "496.45d0c8f1.chunk.js.map": "/portfolio/static/js/496.45d0c8f1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.778b282d.css",
-    "static/js/main.9ee207ea.js"
+    "static/js/main.f8e38db5.js"
   ]
 }
