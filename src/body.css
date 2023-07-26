@@ -21,9 +21,12 @@
 
 .bodydescription {
     min-width:360px;
-    max-width:680px;
+    max-width:615px;
     padding-top:40px;
     padding-bottom:40px;
+    padding-left:80px;
+    line-height:25px;
+    font-size:18px;
 }
 
 .bodytitle {

@@ -7,8 +7,9 @@ class BodyText extends Component {
             <div className="body">
                 <Line/>
                 <div className="bodydescription">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis eget ligula id sollicitudin. Phasellus eu orci posuere, condimentum nisi vel, dignissim nunc. Integer sapien elit, hendrerit ut tincidunt quis, volutpat eget risus. Duis mollis hendrerit tristique. Nullam accumsan mi eget massa dignissim ullamcorper. Mauris id dignissim tortor, ac volutpat metus. Duis massa mauris, vulputate ac ullamcorper vel, mollis et quam. Etiam eget iaculis lorem, a pulvinar ante. Mauris dui diam, scelerisque sit amet rutrum ac, convallis ac lacus.
-                <br/><br/>Ut iaculis eros nec mauris scelerisque dictum. Nunc eget facilisis leo. Pellentesque sagittis suscipit dolor iaculis sagittis. Duis dui justo, ullamcorper in lobortis non, finibus non leo. Sed sed volutpat erat. Nunc metus orci, laoreet ut feugiat sed, commodo nec dui. Phasellus porta ex sit amet ultricies efficitur. Donec ullamcorper lectus et nulla mollis, eu blandit est hendrerit.
+                    In 2016, I programmed my first website, using HTML, CSS and Javascript. The difficulty made me appreciate the remarkable effort behind the various games and websites I used on a daily basis. This difficulty gave me an appreciation for software developers that I still hold to this day.
+                <br/><br/> Over the years, I've taken significant strides towards achieving the level of expertise demonstrated by those who have built software before me. I have worked with various languages and framworks, including C/C++, Python, Javascript, Java, React.js and Node.js. 
+                    Through my time at various firms and undertaking personal projects, I've found that I extensively enjoy problem solving and designing innovative solutions to problems that others face.
                 </div>
             </div>
         )
