@@ -2,22 +2,12 @@ import React, {Component} from "react";
 
 import { connect } from "react-redux";
 
-import "./projects.css"
+import "./projects_mobile.css"
 
 class ProjectText extends Component {
     constructor(props) {
         super(props);
         this.myRef = React.createRef();
-    }
-
-    whiteBorder(id) {
-        let element = document.getElementById(id);
-        element.style.backgroundColor = "rgba(255,255,255,0.08)";
-    }
-
-    removeBorder(id) {
-        let element = document.getElementById(id);
-        element.style.backgroundColor = null;
     }
 
     linkToWebsite(id) {
@@ -36,7 +26,7 @@ class ProjectText extends Component {
         const id = this.props.id;
 
         return (
-            <div className="project" id={id} onClick={()=>this.linkToWebsite(id)} onMouseEnter={()=>this.whiteBorder(id)} onMouseLeave={()=>this.removeBorder(id)} ref = {this.myRef}>
+            <div className="project" id={id} onClick={()=>this.linkToWebsite(id)} ref = {this.myRef}>
                 <div className="projectimage">
                     <img src={image} className="image" alt="Project Image"></img>
                 </div>

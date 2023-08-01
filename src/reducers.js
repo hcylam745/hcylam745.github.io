@@ -81,6 +81,12 @@ const reducers = (state = initState, action) => {
                 ...state,
                 projectsHeight: action.projectsHeight
             }
+        case 13:
+            // 13 = store height of home subtitle
+            return {
+                ...state,
+                homeHeight: action.homeHeight
+            }
         default:
             return state;
     }

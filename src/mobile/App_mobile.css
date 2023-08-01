@@ -1,0 +1,42 @@
+.mobile .textbox {
+  font-family: 'Lato', sans-serif;  
+  font-size: 40px;
+  font-weight: 600;
+  width:30vw;
+  height:calc(65vh - 10px);
+}
+
+.mobile .textdiv {
+  width:30vw;
+  display:flex;
+  flex-direction:column;
+}
+
+.mobile .main {
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  font-family: 'Roboto Slab', serif;
+  width:86%;
+  padding-left:7%;
+  padding-right:7%;
+  padding-top:12%;
+  background-color:#10061d;
+}
+
+.mobile .aboutname {
+  color:rgba(255,255,255,0.9);
+  font-size:40px;
+  padding-bottom:20px;
+  font-weight:600;
+}
+
+.mobile .abouttext {
+  color:rgba(163, 163, 163, 0.9);
+  font-size:16px;
+}
+
+.mobile {
+  display:flex;
+  flex-direction:column;
+}

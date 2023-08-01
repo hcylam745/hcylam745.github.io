@@ -1,0 +1,49 @@
+.mobile .projectcontainer {
+    padding:0;
+    min-width:360px;
+    max-width:680px;
+}
+
+.mobile .projecttext {
+    width:70%;
+    color:rgba(163, 163, 163, 0.9);
+    padding-left:15px;
+}
+
+.mobile .projectheader {
+    color:rgba(255,255,255,0.9);
+    padding-bottom:10px;
+}
+
+.mobile .project {
+    display:flex;
+    flex-direction:row;
+    margin-bottom:20px;
+    margin-top:20px;
+    padding:20px;
+    border-radius:8px;
+}
+
+.mobile .image {
+    width:100%;
+    border-radius:5px;
+}
+
+.mobile .projectimage {
+    padding-right:15px;
+    width:30%;
+}
+
+.mobile .projectline {
+    display:flex;
+    flex-direction:row;
+    padding:0px;
+}
+
+.mobile .projecttitle {
+    color:rgba(255,255,255,0.9);
+    padding:0px;
+    font-size:32px;
+    margin-left:0%;
+    padding-top:40px;
+}

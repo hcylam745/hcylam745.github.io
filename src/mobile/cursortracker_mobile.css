@@ -1,9 +1,9 @@
-.mobile .mousehover {
+.mousehover {
     width:100%;
     height:100%;
 }
 
-.mobile .cursortracker {
+.cursortracker {
     width:100%;
     position:absolute;
 }

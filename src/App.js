@@ -2,24 +2,31 @@ import React, {Component} from "react";
 import { store, persistor } from "./store";
 import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { HashRouter, Routes, Route} from "react-router-dom";
 import Main from "./main";
 import Wordle from "./wordle-clone/App";
-
+import Mobile from "./mobile/main";
 
 import "./App.css";
 
 class App extends Component {
+  componentDidMount() {
+    if (window.screen.width < 950) {
+      window.location.href="#/mobile";
+    }
+  }
+
   render() {
     return (
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <HashRouter>
             <Routes>
-              <Route path="" element={<Main/>}/>
-              <Route path="/wordle" element={<Wordle/>} />
+              <Route path="/" element={<Main/>}/>
+              <Route path="/wordle" element={<Wordle/>}/>
+              <Route path="/mobile" element={<Mobile/>}/>
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
         </PersistGate>
       </Provider>
     )
