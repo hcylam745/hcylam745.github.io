@@ -9,7 +9,8 @@ class CursorTracker extends Component {
 
         this.state = {
             y_pos:40,
-            x_pos:(window.pageXOffset + window.innerWidth)/2
+            x_pos:(window.pageXOffset + window.innerWidth)/2,
+            h:document.body.scrollHeight
         }
         this.handleScroll = this.handleScroll.bind(this);
     }
@@ -27,16 +28,16 @@ class CursorTracker extends Component {
         let x_offset = (window.pageXOffset + window.innerWidth)/2;
         this.setState({
             x_pos:x_offset,
-            y_pos:y_offset
+            y_pos:y_offset,
+            h:document.body.scrollHeight
         })
     }
 
     
 
     render() {
-        const {x_pos, y_pos} = this.state;
+        const {x_pos, y_pos, h} = this.state;
         let new_y_pos = y_pos + 60;
-        let h = document.body.scrollHeight;
         return (
             <div className="cursortracker" style={{height:h, background: "radial-gradient(600px at " + x_pos + "px " + new_y_pos + "px, rgba(60, 21, 117, 0.3), transparent 60%)"}}>
                 &nbsp;

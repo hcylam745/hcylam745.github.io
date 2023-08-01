@@ -10,11 +10,6 @@ import Mobile from "./mobile/main";
 import "./App.css";
 
 class App extends Component {
-  componentDidMount() {
-    if (window.screen.width < 950) {
-      window.location.href="#/mobile";
-    }
-  }
 
   render() {
     return (

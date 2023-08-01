@@ -1,13 +1,14 @@
 .mobile .projectcontainer {
     padding:0;
-    min-width:360px;
-    max-width:680px;
+    min-width:0px;
+    max-width:1000px;
 }
 
 .mobile .projecttext {
-    width:70%;
+    width:100%;
     color:rgba(163, 163, 163, 0.9);
-    padding-left:15px;
+    padding:0;
+    padding-top:15px;
 }
 
 .mobile .projectheader {
@@ -17,10 +18,10 @@
 
 .mobile .project {
     display:flex;
-    flex-direction:row;
-    margin-bottom:20px;
-    margin-top:20px;
-    padding:20px;
+    flex-direction:column;
+    margin-bottom:60px;
+    margin-top:60px;
+    padding:0;
     border-radius:8px;
 }
 
@@ -30,14 +31,16 @@
 }
 
 .mobile .projectimage {
-    padding-right:15px;
-    width:30%;
+    padding:0;
+    padding-bottom:15px;
+    width:80%;
 }
 
 .mobile .projectline {
     display:flex;
     flex-direction:row;
     padding:0px;
+    width:100%;
 }
 
 .mobile .projecttitle {

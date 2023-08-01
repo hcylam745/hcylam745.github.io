@@ -68,9 +68,10 @@
     font-size:32px;
     margin-left:0%;
     padding-top:40px;
+    width:100%;
 }
 
 .mobile .experiencecontainer { 
-    min-width:360px;
-    max-width:680px;
+    min-width:0px;
+    max-width:1000px;
 }

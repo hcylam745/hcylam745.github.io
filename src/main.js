@@ -23,6 +23,10 @@ class Main extends Component {
         this.setState({
             height:height
         })
+
+        window.addEventListener('resize', this.checkIfMobile);
+
+        this.checkIfMobile();
     }
 
     async handleMouseMovement(pos) {
@@ -34,6 +38,19 @@ class Main extends Component {
         })
         this.props.dispatch({type:10, x_pos:posX, y_pos:posY});
     }
+
+    checkIfMobile() {
+        if (window.screen.width < 950) {
+          window.location.href="#/mobile";
+        } else {
+          window.location.href="#/"
+        }
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.checkIfMobile);
+    }
+    
 
     render() {
         const {height} = this.state;
