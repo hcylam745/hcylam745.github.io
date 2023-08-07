@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.5b018a11.css",
-    "main.js": "/static/js/main.8dba1d79.js",
+    "main.js": "/static/js/main.2d4449f0.js",
     "static/js/496.eefed8e2.chunk.js": "/static/js/496.eefed8e2.chunk.js",
     "static/media/snake_image.png": "/static/media/snake_image.de772f429cb1bca072ee.png",
     "static/media/wordle_clone.png": "/static/media/wordle_clone.e3377bf9d67b6a99f8de.png",
     "index.html": "/index.html",
     "main.5b018a11.css.map": "/static/css/main.5b018a11.css.map",
-    "main.8dba1d79.js.map": "/static/js/main.8dba1d79.js.map",
+    "main.2d4449f0.js.map": "/static/js/main.2d4449f0.js.map",
     "496.eefed8e2.chunk.js.map": "/static/js/496.eefed8e2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5b018a11.css",
-    "static/js/main.8dba1d79.js"
+    "static/js/main.2d4449f0.js"
   ]
 }
