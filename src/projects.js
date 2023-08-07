@@ -18,8 +18,7 @@ class Projects extends Component {
                 <div className="projectcontainer">
                     <ProjectText img={Snake} id="snake">
                         Snake Game <br/>
-                        Used pygame to make a playable version of Snake, with two algorithms to play the game. 
-                        The algorithms are both greedy algorithms, one takes the path that reduces the distance from the snake to the apple without dying, the other uses Djikstra's algorithm to find the shortest path and takes it.
+                        Used pygame to make a playable version of Snake, with two algorithms to automatically play the game.
                     </ProjectText>
                     <ProjectText img={Wordle} id="wordle">
                         Wordle Clone <br/>

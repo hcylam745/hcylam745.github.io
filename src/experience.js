@@ -15,26 +15,24 @@ class Experience extends Component {
                     Jun - Aug 2023<br/>
                     Manulife • Summer Intern<br/>
                     Technology Auditor<br/>
-                    Conducted IT SOX testing, ensuring sections of the DevOps pipeline were followed, including the progression from a request on JIRA to a System Integration/User Acceptance Test to deployment, among 7 applications across Manulife Hong Kong.
-                    Developed cybersecurity testing tools with Python to check WAFs and cipher suites, as well as performing 15+ penetration tests across 100+ internal development servers.
-                    Utilized Tesseract OCR & Python to automate downloading files and inputting data, saving 10 hours of manual work per week. <br/>
+                    Conducted IT SOX testing, ensuring sections of the DevOps pipeline were followed, including the progression from a request on JIRA to a System Integration/User Acceptance Test to deployment.
+                	Developed cybersecurity testing tools with Python to check servers for WAFs, ensure that their cipher suites are up to date, and automatically scan for Bitbucket secrets, as well as performing 15+ penetration tests across 100+ internal development servers.<br/>
                     Python, Tesseract
                 </ExperienceText>
                 <ExperienceText>
                     Jan - Jun 2022<br/>
                     HSBC • Student Work Placement Intern<br/>
                     Data Analytics & Automation <br/>
-                    Automated weekly data analytics tasks for using Python and VBA, resulting in a 10-hour reduction in manual work per week.
-                    Used VBA to develop a user-friendly interface to an internal data access system that utilized IBM's Personal Communications 14, which contained millions of records across all of HSBC, improving the efficiency of the entire system by 5 times.
-                    Used SAS Enterprise to filter and combine millions of records across 3 databases, then analyzed the impacts of a policy change on customers and revenue, as well as presenting the information using QlikSense to create comprehensible graphs and tables.<br/>
+                    Used VBA to develop a user-friendly interface to an internal data access system that utilized IBM's Personal Communications 14, which contained millions of records across all of HSBC.
+                    Used SAS Enterprise to filter and combine millions of records, and analyzed the impacts of a policy change on customers and revenue.<br/>
                     Python, VBA, SAS Enterprise, Qliksense
                 </ExperienceText>
                 <ExperienceText>
                     Jun - Dec 2021<br/>
                     HKBN • Summer Intern / Fall Intern  <br/>
                     Full Stack Developer <br/>
-                    Gradually became the lead developer that reported to management for a dashboard website with a React.js front-end, and a Node.js API server which connected to a MySQL database by collaborating with client developer team, which was then deployed in 50+ hospitals and clinics across Hong Kong.
-                    The dashboard displayed information from 30+ databases, including alerts, HVAC information, total harmonic distortion, etc. <br/>           
+                    Built a React.js dashboard that displayed information from a MySQL database by collaborating with a client developer team to develop a Node.js API, which was then deployed across 50+ hospitals and clinics across Hong Kong. 
+                	Visualized data from 30+ tables to speed up information retrieval by 10 times and improve clarity for end users.<br/>           
                     React.js, Node.js, MySQL
                 </ExperienceText>
                 </div>
