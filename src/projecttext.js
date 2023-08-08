@@ -7,17 +7,33 @@ import "./projects.css"
 class ProjectText extends Component {
     constructor(props) {
         super(props);
-        this.myRef = React.createRef();
+
+        this.whiteBorder = this.whiteBorder.bind(this);
+        this.removeBorder = this.removeBorder.bind(this);
+    }
+
+    componentDidUpdate(){
+        const {focusProj, id} = this.props;
+        let element = document.getElementById(id);
+        if (focusProj != null && focusProj != id) {
+            element.style.opacity = 0.6;
+        } else if (focusProj == null || focusProj == id) {
+            element.style.opacity = 1.0;
+        }
     }
 
     whiteBorder(id) {
         let element = document.getElementById(id);
         element.style.backgroundColor = "rgba(255,255,255,0.08)";
+
+        this.props.dispatch({type:14,focusProj:id});
     }
 
     removeBorder(id) {
         let element = document.getElementById(id);
         element.style.backgroundColor = null;
+
+        this.props.dispatch({type:14,focusProj:null});
     }
 
     linkToWebsite(id) {
@@ -36,7 +52,7 @@ class ProjectText extends Component {
         const id = this.props.id;
 
         return (
-            <div className="project" id={id} onClick={()=>this.linkToWebsite(id)} onMouseEnter={()=>this.whiteBorder(id)} onMouseLeave={()=>this.removeBorder(id)} ref = {this.myRef}>
+            <div className="project" id={id} onClick={()=>this.linkToWebsite(id)} onMouseEnter={()=>this.whiteBorder(id)} onMouseLeave={()=>this.removeBorder(id)}>
                 <div className="projectimage">
                     <img src={image} className="image" alt="Project Image"></img>
                 </div>
@@ -53,4 +69,10 @@ class ProjectText extends Component {
     }
 }
 
-export default connect()(ProjectText);
+const mapStateToProps = state => {
+    return {
+        focusProj:state.focusProj
+    }
+}
+
+export default connect(mapStateToProps)(ProjectText);

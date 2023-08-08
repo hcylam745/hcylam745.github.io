@@ -15,6 +15,9 @@ class CursorTracker extends Component {
     }
     
     componentDidMount() {
+        this.setState({
+            h:document.body.scrollHeight
+        })
         window.addEventListener('scroll', this.handleScroll);
     }
 

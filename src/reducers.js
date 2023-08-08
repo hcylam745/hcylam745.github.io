@@ -6,7 +6,9 @@ const initState = {
     word4: ["","","","",""],
     input: "",
     wordpos: 0,
-    pos: 0
+    pos: 0,
+    focusProj: null,
+    focusExper: null
 }
 
 const reducers = (state = initState, action) => {
@@ -58,35 +60,45 @@ const reducers = (state = initState, action) => {
             positionchange: action.positionchange,
         };
         case 9: // 9 = tell website whether to update colours now or not.
-        return {
-            ...state,
-            update: action.update
-        }
+            return {
+                ...state,
+                update: action.update
+            };
         case 10:
             // 10 = cursor moved.
             return {
                 ...state,
                 xPos:action.x_pos,
                 yPos:action.y_pos
-            }
+            };
         case 11:
             // 11 = store height of experience subtitle
             return {
                 ...state,
                 experienceHeight: action.experienceHeight
-            }
+            };
         case 12:
             // 12 = store height of projects subtitle
             return {
                 ...state,
                 projectsHeight: action.projectsHeight
-            }
+            };
         case 13:
             // 13 = store height of home subtitle
             return {
                 ...state,
                 homeHeight: action.homeHeight
-            }
+            };
+        case 14:
+            return {
+                ...state,
+                focusProj: action.focusProj
+            };
+        case 15:
+            return {
+                ...state,
+                focusExper: action.focusExper
+            };
         default:
             return state;
     }

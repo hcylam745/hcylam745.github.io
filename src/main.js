@@ -40,7 +40,7 @@ class Main extends Component {
     }
 
     checkIfMobile() {
-        if (window.screen.width < 950) {
+        if (document.body.clientWidth < 950) {
           window.location.href="#/mobile";
         } else {
           window.location.href="#/"

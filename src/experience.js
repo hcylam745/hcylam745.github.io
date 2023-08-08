@@ -11,7 +11,7 @@ class Experience extends Component {
             <div className="experienceline">
                 <Line/>
                 <div className="experiencecontainer">
-                <ExperienceText>
+                <ExperienceText id="manulife">
                     Jun - Aug 2023<br/>
                     Manulife • Summer Intern<br/>
                     Technology Auditor<br/>
@@ -19,7 +19,7 @@ class Experience extends Component {
                 	Developed cybersecurity testing tools with Python to check servers for WAFs, ensure that their cipher suites are up to date, and automatically scan for Bitbucket secrets, as well as performing 15+ penetration tests across 100+ internal development servers.<br/>
                     Python, Tesseract
                 </ExperienceText>
-                <ExperienceText>
+                <ExperienceText id="hsbc">
                     Jan - Jun 2022<br/>
                     HSBC • Student Work Placement Intern<br/>
                     Data Analytics & Automation <br/>
@@ -27,7 +27,7 @@ class Experience extends Component {
                     Used SAS Enterprise to filter and combine millions of records, and analyzed the impacts of a policy change on customers and revenue.<br/>
                     Python, VBA, SAS Enterprise, Qliksense
                 </ExperienceText>
-                <ExperienceText>
+                <ExperienceText id="hkbn">
                     Jun - Dec 2021<br/>
                     HKBN • Summer Intern / Fall Intern  <br/>
                     Full Stack Developer <br/>

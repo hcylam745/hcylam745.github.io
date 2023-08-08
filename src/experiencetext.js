@@ -1,11 +1,39 @@
 import React, {Component} from "react";
-
+import {connect} from "react-redux";
 
 import "./experience.css"
 
 class ExperienceText extends Component {
     constructor(props) {
         super(props);
+
+        this.whiteBorder = this.whiteBorder.bind(this);
+        this.removeBorder = this.removeBorder.bind(this);
+    }
+
+    componentDidUpdate() {
+        const {focusExper, id} = this.props;
+        console.log(focusExper);
+        let element = document.getElementById(id);
+        if (focusExper != null & focusExper != id) {
+            element.style.opacity = 0.6;
+        } else if (focusExper == null || focusExper == id) {
+            element.style.opacity = 1.0;
+        }
+    }
+
+    whiteBorder(id) {
+        let element = document.getElementById(id);
+        element.style.backgroundColor = "rgba(255,255,255,0.08)";
+
+        this.props.dispatch({type:15,focusExper:id});
+    }
+
+    removeBorder(id) {
+        let element = document.getElementById(id);
+        element.style.backgroundColor = null;
+
+        this.props.dispatch({type:15,focusExper:null});
     }
 
     getSkillsList(skills) {
@@ -16,13 +44,25 @@ class ExperienceText extends Component {
         return divList;
     }
 
+    linkToWebsite(id) {
+        if (id == "manulife") {
+            window.location.href="https://manulife.com/";
+        } else if (id == "hsbc") {
+            window.location.href="https://www.hsbc.com/";
+        } else if (id == "hkbn") {
+            window.location.href="https://www.hkbnes.net/web/";
+        }
+    }
+
     render() {
+        const {id} = this.props;
+
         const children = this.props.children;
 
         const skill_arr = children[8].split(",");
 
         return (
-            <div className="experience">
+            <div id={id} onClick={()=>this.linkToWebsite(id)} onMouseEnter={()=>this.whiteBorder(id)} onMouseLeave={()=>this.removeBorder(id)} className="experience">
                 <div className="timeframe">
                     {children[0]}
                 </div>
@@ -45,4 +85,10 @@ class ExperienceText extends Component {
     }
 }
 
-export default ExperienceText;
+const mapStateToProps = state => {
+    return {
+        focusExper: state.focusExper
+    }
+}
+
+export default connect(mapStateToProps)(ExperienceText);
