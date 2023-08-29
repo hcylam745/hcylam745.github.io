@@ -5,6 +5,7 @@
     flex-direction:column;
     padding-top:40px;
     padding-bottom:40px;
+    padding-left:0;
 }
 
 .mobile .timeframe {
@@ -74,4 +75,5 @@
 .mobile .experiencecontainer { 
     min-width:0px;
     max-width:1000px;
+    padding:0;
 }
