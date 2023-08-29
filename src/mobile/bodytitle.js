@@ -10,7 +10,7 @@ class BodyTitle extends Component {
 
     componentDidMount() {
         let height = this.myRef.current.offsetTop;
-        this.props.dispatch({type:13, homeHeight:height});
+        this.props.dispatch({type:17, homeHeight:height});
     }
 
     render() {

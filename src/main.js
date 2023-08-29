@@ -18,7 +18,7 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        this.props.dispatch({type:10, x_pos:0, y_pos:0});
+        this.props.dispatch({type:14, x_pos:0, y_pos:0});
         const height = this.myRef.current["clientHeight"];
         this.setState({
             height:height
@@ -36,7 +36,7 @@ class Main extends Component {
             x_pos:posX,
             y_pos:posY
         })
-        this.props.dispatch({type:10, x_pos:posX, y_pos:posY});
+        this.props.dispatch({type:14, x_pos:posX, y_pos:posY});
     }
 
     checkIfMobile() {

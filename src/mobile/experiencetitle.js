@@ -12,7 +12,7 @@ class ExperienceTitle extends Component {
 
     componentDidMount() {
         let height = this.myRef.current.offsetTop;
-        this.props.dispatch({type:11, experienceHeight:height});
+        this.props.dispatch({type:15, experienceHeight:height});
     }
 
     render() {

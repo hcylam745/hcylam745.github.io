@@ -25,14 +25,14 @@ class ExperienceText extends Component {
         let element = document.getElementById(id);
         element.style.backgroundColor = "rgba(255,255,255,0.08)";
 
-        this.props.dispatch({type:15,focusExper:id});
+        this.props.dispatch({type:19,focusExper:id});
     }
 
     removeBorder(id) {
         let element = document.getElementById(id);
         element.style.backgroundColor = null;
 
-        this.props.dispatch({type:15,focusExper:null});
+        this.props.dispatch({type:19,focusExper:null});
     }
 
     getSkillsList(skills) {

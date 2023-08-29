@@ -26,14 +26,14 @@ class ProjectText extends Component {
         let element = document.getElementById(id);
         element.style.backgroundColor = "rgba(255,255,255,0.08)";
 
-        this.props.dispatch({type:14,focusProj:id});
+        this.props.dispatch({type:18,focusProj:id});
     }
 
     removeBorder(id) {
         let element = document.getElementById(id);
         element.style.backgroundColor = null;
 
-        this.props.dispatch({type:14,focusProj:null});
+        this.props.dispatch({type:18,focusProj:null});
     }
 
     linkToWebsite(id) {
