@@ -11,42 +11,18 @@ class InputBox extends Component {
       form: "",
       backspace: false
     }
-    this.myRef = React.createRef();
-    this.handleKeypress = this.handleKeypress.bind(this);
-  }
-
-  componentDidMount() {
-    const {pos, position, wordposition} = this.props;
-    if (position === pos) {
-      this.myRef.current.elements[wordposition].focus();
-    }
-  }
-
-  componentDidUpdate() {
-    const {pos, position,wordposition} = this.props;
-    const {form, backspace} = this.state;
-    var arrwords = [this.props.word0, this.props.word1, this.props.word2, this.props.word3, this.props.word4];
-    var currword = arrwords[pos];
-    if (form.elements != null && position != 5 && wordposition === pos) {
-      form.elements[position].focus();
-    }
-  }
-
-  handleKeypress(event){
-    const form = event.target.form;
-    this.setState({form:form})
   }
   
   render(){
     const {pos} = this.props;
     return (
-      <form className="inputbox" onKeyDown={this.handleKeypress} ref={this.myRef}>
+      <div className="inputbox">
         <Box wordpos={pos} pos={0}/>
         <Box wordpos={pos} pos={1}/>
         <Box wordpos={pos} pos={2}/>
         <Box wordpos={pos} pos={3}/>
         <Box wordpos={pos} pos={4}/>
-      </form>
+      </div>
     )
   }
 }

@@ -13,7 +13,6 @@ class ExperienceText extends Component {
 
     componentDidUpdate() {
         const {focusExper, id} = this.props;
-        console.log(focusExper);
         let element = document.getElementById(id);
         if (focusExper != null & focusExper != id) {
             element.style.opacity = 0.6;

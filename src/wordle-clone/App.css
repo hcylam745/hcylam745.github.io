@@ -1,9 +1,12 @@
 .container {
   background-color:#111111;
   width:100vw;
-  height:100vh;
+  min-height:100vh;
   color:rgba(255,255,255,0.8);
   font-family: 'Roboto', sans-serif;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
 .header {
@@ -48,4 +51,50 @@
   color:white;
   font-size:40px;
   caret-color: transparent;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.keyboard{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  margin-top:100px;
+  width:100%;
+  max-width:780px;
+  
+}
+
+.firstrow {
+  display:flex;
+  justify-content: center;
+}
+
+.secondrow {
+  display:flex;
+  justify-content: center;
+}
+
+.thirdrow {
+  display:flex;
+  justify-content: center;
+}
+
+.key {
+  min-width:8%;
+  min-height:60px;
+  margin:2px;
+  background-color: rgba(150, 150, 150, 0.6);
+  font-weight:700;
+  font-size:1em;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+
+#ENTER {
+  min-width:12%;
 }

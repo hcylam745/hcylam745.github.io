@@ -8,7 +8,14 @@ const initState = {
     wordpos: 0,
     pos: 0,
     focusProj: null,
-    focusExper: null
+    focusExper: null,
+    letter: null,
+    whiteletterpos: 0,
+    whitewordpos: 0,
+    badWords: [],
+    yellowWords: [],
+    greenWords: [],
+    positionchange:0
 }
 
 const reducers = (state = initState, action) => {
@@ -19,82 +26,116 @@ const reducers = (state = initState, action) => {
                 word0:action.word,
             };
         case 1: // 1 = change word1.
-        return {
-            ...state,
-            word1:action.word,
-        };
-        case 2: // 2 = change word2.
-        return {
-            ...state,
-            word2:action.word,
-        };
-        case 3: // 3 = change word3.
-        return {
-            ...state,
-            word3:action.word,
-        };
-        case 4: // 4 = change word4.
-        return {
-            ...state,
-            word4:action.word,
-        };
-        case 5: // 5 = change current input.
-        return { 
-            ...state,
-            input:action.input,
-        };
-        case 6: // 6 = change wordpos.
-        return {
-            ...state,
-            wordpos: action.wordpos,
-        };
-        case 7: // 7 = change pos.
-        return {
-            ...state,
-            pos: action.pos,
-        };
-        case 8: // 8 = change colour of positionchange tile in wordpos word.
-        return {
-            ...state,
-            colour: action.colour,
-            positionchange: action.positionchange,
-        };
-        case 9: // 9 = tell website whether to update colours now or not.
             return {
                 ...state,
-                update: action.update
+                word1:action.word,
             };
-        case 10:
-            // 10 = cursor moved.
+        case 2: // 2 = change word2.
+            return {
+                ...state,
+                word2:action.word,
+            };
+        case 3: // 3 = change word3.
+            return {
+                ...state,
+                word3:action.word,
+            };
+        case 4: // 4 = change word4.
+            return {
+                ...state,
+                word4:action.word,
+            };
+        case 5: // 5 = change current input.
+            return { 
+                ...state,
+                input:action.input,
+            };
+        case 6: // 6 = change wordpos.
+            return {
+                ...state,
+                wordpos: action.wordpos,
+            };
+        case 7: // 7 = change pos.
+            return {
+                ...state,
+                pos: action.pos,
+            };
+        case 8: // 8 = change colour of positionchange tile in wordpos word.
+            return {
+                ...state,
+                colour: action.colour,
+                positionchange: action.positionchange,
+            };
+        case 9: // 9 = change letter of positionchange tile in wordpos word.
+            return {
+                ...state,
+                letter: action.letter,
+                positionchange: action.positionchange
+            };
+        case 10: // 10 = position of white box.
+            return {
+                ...state,
+                whiteletterpos: action.whiteletterpos,
+                whitewordpos: action.whitewordpos
+            };
+        case 11: // 11 = add letter to bad_words
+            let badWords = state.badWords;
+            if (!badWords.includes(action.badWords)) {
+                badWords.push(action.badWords);
+            }
+            return {
+                ...state,
+                badWords: badWords
+            }
+        case 12: // 12 = add letter to yellow_words
+            let yellowWords = state.yellowWords;
+            if (!yellowWords.includes(action.yellowWords)) {
+                yellowWords.push(action.yellowWords);
+            }
+            return {
+                ...state,
+                yellowWords: yellowWords
+            }
+        case 13: // 13 = add letter to green_words
+            let greenWords = state.greenWords;
+            if (!greenWords.includes(action.greenWords)) {
+                greenWords.push(action.greenWords);
+            }
+            return {
+                ...state,
+                greenWords: greenWords
+            }
+        case 14:
+            // 14 = cursor moved.
             return {
                 ...state,
                 xPos:action.x_pos,
                 yPos:action.y_pos
             };
-        case 11:
-            // 11 = store height of experience subtitle
+        case 15:
+            // 15 = store height of experience subtitle
             return {
                 ...state,
                 experienceHeight: action.experienceHeight
             };
-        case 12:
-            // 12 = store height of projects subtitle
+        case 16:
+            // 16 = store height of projects subtitle
             return {
                 ...state,
                 projectsHeight: action.projectsHeight
             };
-        case 13:
-            // 13 = store height of home subtitle
+        case 17:
+            // 17 = store height of home subtitle
             return {
                 ...state,
                 homeHeight: action.homeHeight
             };
-        case 14:
+        case 18:
             return {
                 ...state,
                 focusProj: action.focusProj
             };
-        case 15:
+        case 19:
             return {
                 ...state,
                 focusExper: action.focusExper

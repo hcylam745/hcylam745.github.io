@@ -12,29 +12,156 @@ class MainBody extends Component {
     var size = Object.keys(data).length;
     word = data[Math.floor(Math.random() * size) + 1];
     //console.log(word);
-    this.props.dispatch({type:9, update:false});
     this.state = {
       finalword:word,
-      win:false
+      win:false,
+      input:null,
+      wordpos:0,
+      word0:null,
+      word1:null,
+      word2:null,
+      word3:null,
+      word4:null,
+      gameEnded:false
+    }
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
+
+  findFirstInstance(arr, element, ignore_arr) {
+    for (let i = 0; i < arr.length; i++) {
+      if (element.toLowerCase() == arr[i] && ignore_arr[i] == false) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleKeyDown);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyDown);
+  }
+
+  checkIfEmpty(words) {
+    var bool = false;
+    for (let i = 0; i < 5; i++) {
+      if (words[i] === null) {
+        bool = true;
+      }
+    }
+    return bool;
+  }
+
+  checkLose(){
+    const {wordpos} = this.props;
+    if (wordpos >= 5) {
+      console.log("YOU SUCK");
+      return true;
+    } else {
+      return false;
     }
   }
 
-  sleep(ms) {
-    return new Promise(res => setTimeout(res,ms));
+  updateGuess(){
+    const {wordpos} = this.props;
+    //this.myRef.current.children[wordpos+1].children[0].focus();
+    this.props.dispatch({type:9,word:null,positionchange:-1});
+    this.props.dispatch({type:8,color:"B",positionchange:-1});
+    this.props.dispatch({type:6,wordpos:wordpos+1});
+    this.props.dispatch({type:7,pos:0});
+    this.setState({
+      word0:null,
+      word1:null,
+      word2:null,
+      word3:null,
+      word4:null
+    })
   }
 
-  componentDidUpdate() {
-    const {input, wordpos, pos, word0, word1, word2, word3, word4} = this.props;
-    const {finalword} = this.state
-    var skip = false;
-    if (pos !== 5) {
+  handleKeyDown = event => {
+    const {wordpos} = this.props;
+    const {gameEnded, word0, word1, word2, word3, word4, finalword} = this.state;
+    this.setState({
+      input:event.key,
+    })
+    
+    let skip = false;
+
+    if (gameEnded) {
       return;
     }
-    if (input === 13) { // this checks for enter being hit
+
+    if ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode >= 97 && event.keyCode <= 122)) {
+      if (word0 == null) {
+        this.setState({
+          word0:event.key.toUpperCase()
+        })
+        this.props.dispatch({type:9, letter:event.key.toUpperCase(),positionchange:0});
+        this.props.dispatch({type:10, whiteletterpos:1,whitewordpos:wordpos});
+      } else if (word1 == null) {
+        this.setState({
+          word1:event.key.toUpperCase()
+        })
+        this.props.dispatch({type:9, letter:event.key.toUpperCase(),positionchange:1});
+        this.props.dispatch({type:10, whiteletterpos:2,whitewordpos:wordpos});
+      } else if (word2 == null) {
+        this.setState({
+          word2:event.key.toUpperCase()
+        })
+        this.props.dispatch({type:9, letter:event.key.toUpperCase(),positionchange:2});
+        this.props.dispatch({type:10, whiteletterpos:3,whitewordpos:wordpos});
+      } else if (word3 == null) {
+        this.setState({
+          word3:event.key.toUpperCase()
+        })
+        this.props.dispatch({type:9, letter:event.key.toUpperCase(),positionchange:3});
+        this.props.dispatch({type:10, whiteletterpos:4,whitewordpos:wordpos});
+      } else if (word4 == null) {
+        this.setState({
+          word4:event.key.toUpperCase()
+        })
+        this.props.dispatch({type:9, letter:event.key.toUpperCase(),positionchange:4});
+        this.props.dispatch({type:10, whiteletterpos:0,whitewordpos:-1});
+      }
+    } else if (event.keyCode == 8) {
+      if (word4 != null) {
+        this.setState({
+          word4:null
+        })
+        this.props.dispatch({type:9, letter:null, positionchange:4});
+        this.props.dispatch({type:10, whiteletterpos:4,whitewordpos:wordpos});
+      } else if (word3 != null) {
+        this.setState({
+          word3:null
+        })
+        this.props.dispatch({type:9, letter:null, positionchange:3});
+        this.props.dispatch({type:10, whiteletterpos:3,whitewordpos:wordpos});
+      } else if (word2 != null) {
+        this.setState({
+          word2:null
+        })
+        this.props.dispatch({type:9, letter:null, positionchange:2});
+        this.props.dispatch({type:10, whiteletterpos:2,whitewordpos:wordpos});
+      } else if (word1 != null) {
+        this.setState({
+          word1:null
+        })
+        this.props.dispatch({type:9, letter:null, positionchange:1});
+        this.props.dispatch({type:10, whiteletterpos:1,whitewordpos:wordpos});
+      } else if (word0 != null) {
+        this.setState({
+          word0:null
+        })
+        this.props.dispatch({type:9, letter:null, positionchange:0});
+        this.props.dispatch({type:10, whiteletterpos:0,whitewordpos:wordpos});
+      }
+    } else if (event.keyCode == 13) {
       var url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
       var words = [word0, word1, word2, word3, word4];
-      if (!this.checkIfEmpty(words, wordpos)) {
-        url += words[wordpos][0] + words[wordpos][1] + words[wordpos][2] + words[wordpos][3] + words[wordpos][4];
+      if (!this.checkIfEmpty(words)) {
+        url += words[0] + words[1] + words[2] + words[3] + words[4];
         axios.get(url)
         .catch(function (error) {
           if (error.response) {
@@ -45,58 +172,61 @@ class MainBody extends Component {
         .then(async (res)=>{
           if (!skip) {
             if (!this.checkLose()){
-              this.props.dispatch({type:9,update:true});
+              let used = [false, false, false, false, false];
+              let user_used = [false, false, false, false];
+              let failed = false;
+              // search for green, then yellow, then fill all remaining slots with black.
               for (let i = 0; i < 5; i++) {
-                if (words[wordpos][i].toUpperCase() === finalword[i].toUpperCase()){
-                  //console.log("setting " + i + "'th letter to green")
-                  this.props.dispatch({type:8,colour:"G",positionchange:i});
-                  //send packets to change ith square of wordpos into green
-                } else if (finalword.includes(words[wordpos][i].toLowerCase())) {
-                  this.props.dispatch({type:8,colour:"Y",positionchange:i});
-                  //send packets to change ith square of wordpos into yellow
-                } else {
-                  //ignore / send packets to change ith square of wordpos into grey/black.
-                  this.props.dispatch({type:8,colour:"B",positionchange:i});
+                if (words[i].toLowerCase() == finalword[i]) {
+                  this.props.dispatch({type:8, colour:"G", positionchange:i});
+                  this.props.dispatch({type:13, greenWords:words[i]});
+                  await new Promise(r => setTimeout(r, 100));
+                  used[i] = true;
+                  user_used[i] = true;
                 }
-                // delay here
-                await this.sleep(50);
               }
-              this.props.dispatch({type:9,update:false});
+
+              // now search for yellow & black.
+              for (let i = 0; i < 5; i++) {
+                if (user_used[i] != true) {
+                  let found_wordpos = this.findFirstInstance(finalword, words[i], used);
+                  if (found_wordpos != -1) {
+                    this.props.dispatch({type:8, colour:"Y", positionchange:i});
+                    this.props.dispatch({type:12, yellowWords:words[i]});
+                    await new Promise(r => setTimeout(r, 100));
+                    used[found_wordpos] = true;
+                    failed = true;
+                    user_used[i] = true;
+                  } else {
+                    this.props.dispatch({type:8, colour:"B",positionchange:i});
+                    this.props.dispatch({type:11,badWords:words[i]});
+                    await new Promise(r => setTimeout(r, 100));
+                    failed = true;
+                    user_used[i] = true;
+                  }
+                }
+              }
+
+              if (!failed) {
+                this.setState({
+                  gameEnded:true
+                })
+              }
+              
+              this.props.dispatch({type:wordpos,word:words});
+
+              this.updateGuess();
+            } else {
+              this.setState({
+                gameEnded:true
+              })
             }
-            this.updateGuess();
           } else {
             //console.log("skipped")
           }
         })
-      } 
-    }
-  }
-
-  checkIfEmpty(words, j) {
-    var bool = false;
-    for (let i = 0; i < 5; i++) {
-      if (words[j][i] == "") {
-        bool = true;
       }
     }
-    return bool;
-  }
-
-  checkLose(){
-    const {wordpos} = this.props;
-    if (wordpos === 4) {
-      console.log("YOU SUCK");
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  updateGuess(){
-    const {wordpos} = this.props;
-    this.myRef.current.children[wordpos+1].children[0].focus();
-    this.props.dispatch({type:6,wordpos:wordpos+1});
-    this.props.dispatch({type:7,pos:0});
   }
 
   render(){
@@ -114,14 +244,7 @@ class MainBody extends Component {
 
 const mapStateToProps = state => {
   return {
-    word0: state.word0,
-    word1: state.word1,
-    word2: state.word2,
-    word3: state.word3,
-    word4: state.word4,
-    input: state.input,
-    wordpos: state.wordpos,
-    pos: state.pos
+    wordpos:state.wordpos
   }
 }
 
