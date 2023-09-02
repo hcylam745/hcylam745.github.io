@@ -6,6 +6,7 @@ class Key extends Component {
     super(props);
 
     this.myRef = React.createRef();
+    this.clickKey = this.clickKey.bind(this);
   }
 
   componentDidUpdate() {
@@ -19,11 +20,16 @@ class Key extends Component {
     }
   }
 
+  clickKey() {
+    const {id} = this.props;
+    this.props.dispatch({type:20,newletter:id});
+  }
+
   render(){
     const {id} = this.props;
 
     return (
-      <div className="key" id={id} ref={this.myRef}>
+      <div className="key" id={id} ref={this.myRef} onClick={this.clickKey}>
           {id}
       </div>
     )

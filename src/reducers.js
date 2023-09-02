@@ -15,7 +15,11 @@ const initState = {
     badWords: [],
     yellowWords: [],
     greenWords: [],
-    positionchange:0
+    positionchange:0,
+    newletter: null,
+    failedGuess: false,
+    failedGame: false,
+    wonGame: false
 }
 
 const reducers = (state = initState, action) => {
@@ -139,6 +143,26 @@ const reducers = (state = initState, action) => {
             return {
                 ...state,
                 focusExper: action.focusExper
+            };
+        case 20:
+            return {
+                ...state,
+                newletter: action.newletter
+            };
+        case 21:
+            return {
+                ...state,
+                failedGuess: action.failedGuess
+            };
+        case 22:
+            return {
+                ...state,
+                failedGame: action.failedGame
+            };
+        case 23:
+            return {
+                ...state,
+                wonGame: action.wonGame
             };
         default:
             return state;

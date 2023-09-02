@@ -44,6 +44,22 @@ class MainBody extends Component {
     document.removeEventListener("keydown", this.handleKeyDown);
   }
 
+  componentDidUpdate() {
+    const {newletter} = this.props;
+    let event = "";
+    if (newletter == null) {
+      return;
+    } else if (newletter == "ENTER") {
+      event = new KeyboardEvent('keydown', {'keyCode':13});
+    } else if (newletter == "⌫") {
+      event = new KeyboardEvent('keydown', {'keyCode':8});
+    } else {
+      event = new KeyboardEvent('keydown', {'keyCode':newletter.charCodeAt(0),'key':newletter});
+    }
+    this.handleKeyDown(event);
+    this.props.dispatch({type:20,newletter:null});
+  }
+
   checkIfEmpty(words) {
     var bool = false;
     for (let i = 0; i < 5; i++) {
@@ -57,7 +73,6 @@ class MainBody extends Component {
   checkLose(){
     const {wordpos} = this.props;
     if (wordpos >= 5) {
-      console.log("YOU SUCK");
       return true;
     } else {
       return false;
@@ -71,6 +86,7 @@ class MainBody extends Component {
     this.props.dispatch({type:8,color:"B",positionchange:-1});
     this.props.dispatch({type:6,wordpos:wordpos+1});
     this.props.dispatch({type:7,pos:0});
+    this.props.dispatch({type:10,whiteletterpos:0,whitewordpos:wordpos+1});
     this.setState({
       word0:null,
       word1:null,
@@ -163,7 +179,7 @@ class MainBody extends Component {
       if (!this.checkIfEmpty(words)) {
         url += words[0] + words[1] + words[2] + words[3] + words[4];
         axios.get(url)
-        .catch(function (error) {
+        .catch(function async (error) {
           if (error.response) {
             //console.log(error.response);
             skip = true;
@@ -183,7 +199,13 @@ class MainBody extends Component {
                   await new Promise(r => setTimeout(r, 100));
                   used[i] = true;
                   user_used[i] = true;
+                } else {
+                  failed = true;
                 }
+              }
+
+              if (!failed) {
+                this.props.dispatch({type:23, wonGame:true});
               }
 
               // now search for yellow & black.
@@ -195,13 +217,11 @@ class MainBody extends Component {
                     this.props.dispatch({type:12, yellowWords:words[i]});
                     await new Promise(r => setTimeout(r, 100));
                     used[found_wordpos] = true;
-                    failed = true;
                     user_used[i] = true;
                   } else {
                     this.props.dispatch({type:8, colour:"B",positionchange:i});
                     this.props.dispatch({type:11,badWords:words[i]});
                     await new Promise(r => setTimeout(r, 100));
-                    failed = true;
                     user_used[i] = true;
                   }
                 }
@@ -211,17 +231,23 @@ class MainBody extends Component {
                 this.setState({
                   gameEnded:true
                 })
-              }
+              } else if (wordpos == 4) {
+                this.props.dispatch({type:22, failedGame:true});
+              } 
               
               this.props.dispatch({type:wordpos,word:words});
 
               this.updateGuess();
+              
             } else {
               this.setState({
                 gameEnded:true
               })
             }
           } else {
+            this.props.dispatch({type:21, failedGuess:true});
+            await new Promise(r => setTimeout(r, 700));
+            this.props.dispatch({type:21, failedGuess:false});
             //console.log("skipped")
           }
         })
@@ -244,7 +270,8 @@ class MainBody extends Component {
 
 const mapStateToProps = state => {
   return {
-    wordpos:state.wordpos
+    wordpos:state.wordpos,
+    newletter:state.newletter
   }
 }
 

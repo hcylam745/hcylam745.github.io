@@ -26,7 +26,7 @@ class Box extends Component {
 
   componentDidUpdate() {
     const {colour, positionchange, wordpos, pos, wordposition, letter, whiteletterpos, whitewordpos} = this.props;
-    
+
     if (wordpos === wordposition && pos === positionchange) {
       if (colour == "B") {
         this.myRef.current.style.backgroundColor = "black";
