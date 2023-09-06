@@ -12,7 +12,7 @@ class AboutMe extends Component {
                     Henry Lam
                 </div>
                 <div className="abouttext">
-                    Hi! I'm a third year Computer Science student at the Hong Kong University of Science and Technology.
+                    Hi! I'm a fourth year Computer Science student at the Hong Kong University of Science and Technology.
                 </div>
             </div>
         )
