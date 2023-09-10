@@ -9,13 +9,13 @@ class TextOverlay extends Component {
   }
 
   componentDidUpdate() {
-    const {failedGuess, failedGame, wonGame} = this.props;
+    const {failedGuess, failedGame, wonGame, correctWord} = this.props;
     
     if (failedGuess) {
       this.myRef.current.innerHTML = "Invalid Word! Please try again with a new word!";
       this.myRef.current.style = "display:flex;";
     } else if (failedGame) {
-      this.myRef.current.innerHTML = "You Lost! Better luck next time. Please refresh to try again.";
+      this.myRef.current.innerHTML = "You Lost! Better luck next time. Please refresh to try again. The correct word was " + correctWord;
       this.myRef.current.style = "display:flex;";
     } else if (wonGame) {
       this.myRef.current.innerHTML = "You Won! Please refresh to play again.";
@@ -37,7 +37,8 @@ const mapStateToProps = state => {
   return {
     failedGuess: state.failedGuess,
     failedGame: state.failedGame,
-    wonGame: state.wonGame
+    wonGame: state.wonGame,
+    correctWord: state.correctWord
   }
 }
 

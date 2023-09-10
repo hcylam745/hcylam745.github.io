@@ -232,7 +232,7 @@ class MainBody extends Component {
                   gameEnded:true
                 })
               } else if (wordpos == 4) {
-                this.props.dispatch({type:22, failedGame:true});
+                this.props.dispatch({type:22, failedGame:true, correctWord:finalword});
               } 
               
               this.props.dispatch({type:wordpos,word:words});

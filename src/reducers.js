@@ -19,7 +19,8 @@ const initState = {
     newletter: null,
     failedGuess: false,
     failedGame: false,
-    wonGame: false
+    wonGame: false,
+    correctWord: ""
 }
 
 const reducers = (state = initState, action) => {
@@ -157,7 +158,8 @@ const reducers = (state = initState, action) => {
         case 22:
             return {
                 ...state,
-                failedGame: action.failedGame
+                failedGame: action.failedGame,
+                correctWord: action.correctWord
             };
         case 23:
             return {
