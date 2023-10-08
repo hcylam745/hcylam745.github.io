@@ -41,6 +41,8 @@ class ProjectText extends Component {
             window.location.href="#/wordle";
         } else if (id == "snake") {
             window.location.href="https://github.com/hcylam745/snakegame"
+        } else if (id == "foodchoosing") {
+            window.location.href="https://github.com/hcylam745/food-choosing-app"
         }
     }
 

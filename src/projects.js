@@ -27,7 +27,7 @@ class Projects extends Component {
                     </ProjectText>
                     <ProjectText img={FoodChoosing} id="foodchoosing">
                         Food Choosing App <br/>
-                        I amde an app to help choose what to eat for dinner. It's currently work in progress, hence the UI isn't great, and it isn't deployed.
+                        I made an app to help choose what to eat for dinner. It's currently work in progress, hence the UI isn't great, and it isn't deployed.
                     </ProjectText>
                 </div>
             </div>
