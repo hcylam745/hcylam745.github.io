@@ -3,6 +3,7 @@ import Snake from "./snake_image.png";
 import Wordle from "./wordle_clone.png";
 import ProjectText from "./projecttext";
 import Line from "./line";
+import FoodChoosing from "./food_choosing.png";
 
 import "./projects.css"
 
@@ -18,11 +19,15 @@ class Projects extends Component {
                 <div className="projectcontainer">
                     <ProjectText img={Snake} id="snake">
                         Snake Game <br/>
-                        Used pygame to make a playable version of Snake, with two algorithms to automatically play the game.
+                        I used pygame to make a playable version of Snake, with two algorithms to automatically play the game.
                     </ProjectText>
                     <ProjectText img={Wordle} id="wordle">
                         Wordle Clone <br/>
                         I created a clone of wordle. Feel free to play it!
+                    </ProjectText>
+                    <ProjectText img={FoodChoosing} id="foodchoosing">
+                        Food Choosing App <br/>
+                        I amde an app to help choose what to eat for dinner. It's currently work in progress, hence the UI isn't great, and it isn't deployed.
                     </ProjectText>
                 </div>
             </div>
