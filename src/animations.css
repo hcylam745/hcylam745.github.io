@@ -1,0 +1,40 @@
+
+.focused {
+    animation: focus 0.2s ease-in;
+    background-color:rgba(255,255,255,0.08);
+}
+
+.focusedundo {
+    animation: reversefocus 0.2s ease-in;
+    background-color:rgba(255,255,255, 0);
+}
+
+.unfocused {
+    animation:unfocus 0.2s ease-in;
+    opacity:0.6;
+}
+
+.unfocusundo {
+    animation:reverseunfocus 0.2s ease-in;
+    opacity:1;
+}
+
+@keyframes reversefocus {
+    from {background-color:rgba(255,255,255,0.08)}
+    to {background-color:rgba(255,255,255,0)}
+}
+
+@keyframes focus {
+    from {background-color:rgba(255,255,255,0)}
+    to {background-color:rgba(255,255,255,0.08)}
+}
+
+@keyframes unfocus {
+    from {opacity:1}
+    to {opacity:0.6}
+}
+
+@keyframes reverseunfocus {
+    from {opacity:0.6}
+    to {opacity:1}
+}

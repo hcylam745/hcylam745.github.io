@@ -8,6 +8,7 @@ import Wordle from "./wordle-clone/App";
 import Mobile from "./mobile/main";
 
 import "./App.css";
+import "./animations.css";
 
 class App extends Component {
 

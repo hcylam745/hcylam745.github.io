@@ -20,8 +20,6 @@
 .project {
     display:flex;
     flex-direction:row;
-    margin-bottom:20px;
-    margin-top:20px;
     padding:20px;
     border-radius:8px;
 }

@@ -15,22 +15,42 @@ class ExperienceText extends Component {
         const {focusExper, id} = this.props;
         let element = document.getElementById(id);
         if (focusExper != null & focusExper != id) {
-            element.style.opacity = 0.6;
+            //element.style.opacity = 0.6;
+            element.classList.remove('unfocusundo');
+            element.classList.add('unfocused');
+            
         } else if (focusExper == null || focusExper == id) {
-            element.style.opacity = 1.0;
+            //element.style.opacity = 1.0;
+            if (element.classList.contains('unfocused')) {
+                element.classList.remove('unfocused');
+                if (!element.classList.contains('focused')) {
+                    element.classList.add('unfocusundo');
+                    setTimeout(() => {
+                        element.classList.remove('unfocusundo')
+                    }, 200);
+                }
+            }
         }
     }
 
     whiteBorder(id) {
         let element = document.getElementById(id);
-        element.style.backgroundColor = "rgba(255,255,255,0.08)";
+        //element.style.backgroundColor = "rgba(255,255,255,0.08)";
+        element.classList.add('focused');
+        element.classList.remove('unfocusundo');
 
         this.props.dispatch({type:19,focusExper:id});
     }
 
     removeBorder(id) {
         let element = document.getElementById(id);
-        element.style.backgroundColor = null;
+        element.classList.remove('focused');
+
+        element.classList.add('focusedundo');
+
+        setTimeout(()=>{
+            element.classList.remove('focusedundo');
+        }, 200);
 
         this.props.dispatch({type:19,focusExper:null});
     }
