@@ -9,6 +9,10 @@
   align-items:center;
 }
 
+.wordle-clone .text {
+  font-family: 'Roboto', sans-serif;
+}
+
 .header {
   margin-top:5%;
   width:100%;
