@@ -13,6 +13,23 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.wordle-clone .addword {
+  animation-name: Pop;
+  animation-duration:100ms;
+}
+
+@keyframes Pop {
+  from {
+    transform: scale(0.8);
+    opacity:0;
+  }
+
+  40% {
+    transform: scale(1.1);
+    opacity:1;
+  }
+}
+
 .header {
   margin-top:5%;
   width:100%;

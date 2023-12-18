@@ -39,6 +39,10 @@ class Box extends Component {
       if (wordpos === wordposition && pos === positionchange && colour == null) {
         if (letter != null) {
           this.myRef.current.innerHTML = letter;
+          this.myRef.current.className += " addword";
+          setTimeout(()=>{
+            this.myRef.current.classList.remove("addword");
+          },100)
         } else {
           this.myRef.current.innerHTML = null;
         }
