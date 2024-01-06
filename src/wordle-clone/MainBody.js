@@ -191,12 +191,27 @@ class MainBody extends Component {
               let used = [false, false, false, false, false];
               let user_used = [false, false, false, false];
               let failed = false;
+
+              let dispatches = {}
+
               // search for green, then yellow, then fill all remaining slots with black.
               for (let i = 0; i < 5; i++) {
                 if (words[i].toLowerCase() == finalword[i]) {
-                  this.props.dispatch({type:8, colour:"G", positionchange:i});
-                  this.props.dispatch({type:13, greenWords:words[i]});
-                  await new Promise(r => setTimeout(r, 100));
+                  // this.props.dispatch({type:8, colour:"G", positionchange:i});
+                  // this.props.dispatch({type:13, greenWords:words[i]});
+
+                  dispatches[i] = [{
+                    "type":8,
+                    "colour":"G",
+                    "positionchange":i
+                  }]
+
+                  dispatches[i].push({
+                    "type":13,
+                    "greenWords": words[i]
+                  })
+
+                  //await new Promise(r => setTimeout(r, 100));
                   used[i] = true;
                   user_used[i] = true;
                 } else {
@@ -205,6 +220,20 @@ class MainBody extends Component {
               }
 
               if (!failed) {
+                for (let j = 0; j < 5; j++) {
+                  for (let k = 0; k < dispatches[j].length; k++) {
+                    switch(dispatches[j][k]["type"]) {
+                      case 8:
+                        this.props.dispatch({type:8, colour:dispatches[j][k]["colour"],positionchange:dispatches[j][k]["positionchange"]});
+                        break;
+                      case 13:
+                        this.props.dispatch({type:13, greenWords:dispatches[j][k]["greenWords"]});
+                        break;
+                    }
+                  }
+                  await new Promise(r => setTimeout(r, 100));
+                }
+
                 this.props.dispatch({type:23, wonGame:true});
               }
 
@@ -213,18 +242,62 @@ class MainBody extends Component {
                 if (user_used[i] != true) {
                   let found_wordpos = this.findFirstInstance(finalword, words[i], used);
                   if (found_wordpos != -1) {
-                    this.props.dispatch({type:8, colour:"Y", positionchange:i});
-                    this.props.dispatch({type:12, yellowWords:words[i]});
-                    await new Promise(r => setTimeout(r, 100));
+                    // this.props.dispatch({type:8, colour:"Y", positionchange:i});
+                    // this.props.dispatch({type:12, yellowWords:words[i]});
+                    // await new Promise(r => setTimeout(r, 100));
+
+                    dispatches[i]=[{
+                      "type":8,
+                      "colour":"Y",
+                      "positionchange":i
+                    }]
+
+                    dispatches[i].push({
+                      "type":12,
+                      "yellowWords":words[i]
+                    })
+
                     used[found_wordpos] = true;
                     user_used[i] = true;
                   } else {
-                    this.props.dispatch({type:8, colour:"B",positionchange:i});
-                    this.props.dispatch({type:11,badWords:words[i]});
-                    await new Promise(r => setTimeout(r, 100));
+                    // this.props.dispatch({type:8, colour:"B",positionchange:i});
+                    // this.props.dispatch({type:11,badWords:words[i]});
+                    // await new Promise(r => setTimeout(r, 100));
+
+                    dispatches[i]=[{
+                      "type":8,
+                      "colour":"B",
+                      "positionchange":i
+                    }]
+
+                    dispatches[i].push({
+                      "type":11,
+                      "badWords":words[i]
+                    })
+
                     user_used[i] = true;
                   }
                 }
+              }
+
+              for (let j = 0; j < 5; j++) {
+                for (let k = 0; k < dispatches[j].length; k++) {
+                  switch(dispatches[j][k]["type"]) {
+                    case 8:
+                      this.props.dispatch({type:8, colour:dispatches[j][k]["colour"],positionchange:dispatches[j][k]["positionchange"]});
+                      break;
+                    case 11:
+                      this.props.dispatch({type:11, badWords:dispatches[j][k]["badWords"]});
+                      break;
+                    case 12:
+                      this.props.dispatch({type:12, yellowWords:dispatches[j][k]["yellowWords"]});
+                      break;
+                    case 13:
+                      this.props.dispatch({type:13, greenWords:dispatches[j][k]["greenWords"]});
+                      break;
+                  }
+                }
+                await new Promise(r => setTimeout(r, 100));
               }
 
               if (!failed) {
