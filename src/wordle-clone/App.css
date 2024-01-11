@@ -30,6 +30,37 @@
   }
 }
 
+
+.flipin {
+  animation-name: FlipIn;
+  animation-duration:250ms;
+  animation-timing-function: ease-in;
+}
+
+.flipout {
+  animation-name: FlipOut;
+  animation-duration:250ms;
+  animation-timing-function: ease-in;
+}
+
+@keyframes FlipIn {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+@keyframes FlipOut{
+  0% {
+    transform: rotateX(-90deg);
+  }
+  100% {
+    transform:rotateX(0);
+  }
+}
+
 .header {
   margin-top:5%;
   width:100%;

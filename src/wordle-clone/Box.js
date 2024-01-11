@@ -28,13 +28,25 @@ class Box extends Component {
     const {colour, positionchange, wordpos, pos, wordposition, letter, whiteletterpos, whitewordpos} = this.props;
 
     if (wordpos === wordposition && pos === positionchange) {
-      if (colour == "B") {
-        this.myRef.current.style.backgroundColor = "black";
-      } else if (colour == "Y") {
-        this.myRef.current.style.backgroundColor = "orange";
-      } else if (colour == "G") {
-        this.myRef.current.style.backgroundColor = "green";
+      if (colour !== undefined) {
+        if (colour === "B") {
+          this.myRef.current.style.backgroundColor = "black";
+        } else if (colour === "Y") {
+          this.myRef.current.style.backgroundColor = "orange";
+        } else if (colour === "G") {
+          this.myRef.current.style.backgroundColor = "green";
+        }
+        this.myRef.current.className += " flipin";
+        setTimeout(()=>{
+          this.myRef.current.classList.remove("flipin");
+          this.myRef.current.className += " flipout";
+        }, 250)
+
+        setTimeout(()=>{
+          this.myRef.current.classList.remove("flipout");
+        }, 500)
       }
+      
 
       if (wordpos === wordposition && pos === positionchange && colour == null) {
         if (letter != null) {
