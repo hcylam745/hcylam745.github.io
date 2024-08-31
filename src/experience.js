@@ -11,12 +11,23 @@ class Experience extends Component {
             <div className="experienceline">
                 <Line/>
                 <div className="experiencecontainer">
+                <ExperienceText id="hsbcdigitalinnovation">
+                    Jun - Aug 2024 <br/>
+                    HSBC • Digital Innovation Summer Intern <br/>
+                    Full Stack Software Engineer <br/>
+                    Deployed an existing productivity tracking internal tool to AWS with Terraform and Jenkins, reducing runtime by 200%.
+                    Identified a limitation of an internal tool and proposed a solution in Python, increasing efficiency by over 900%.
+                    Visualized productivity data across 600+ repositories and 300+ members, enhancing decision-making and performance tracking.
+                    Collaborated with stakeholders across 5+ different teams to ensure code quality and proper testing for frontend Angular tickets.<br/>
+                    Terraform, AWS, AngularJS, React.js
+                </ExperienceText>
                 <ExperienceText id="manulife">
                     Jun - Aug 2023<br/>
                     Manulife • Summer Intern<br/>
                     Technology Auditor<br/>
-                    Conducted IT SOX testing, ensuring sections of the DevOps pipeline were followed, including the progression from a request on JIRA to a System Integration/User Acceptance Test to deployment.
-                	Developed cybersecurity testing tools with Python to check servers for WAFs, ensure that their cipher suites are up to date, and automatically scan for Bitbucket secrets, as well as performing 15+ penetration tests across 100+ internal development servers.<br/>
+                    Conducted IT SOX testing for DevOps pipeline compliance across 7 applications across Manulife Hong Kong, ensuring seamless progression from JIRA requests to system integration tests / user acceptance tests to deployment.
+                	Developed cybersecurity testing tools with Python to check servers for WAFs, ensure that their cipher suites are up to date, and automatically scan for Bitbucket secrets, as well as performing 15+ penetration tests across 100+ internal development servers.
+                    Created a custom secret scanner to automatically clone and scan 800+ repositories from Bitbucket, safeguarding 200+ secrets.<br/>
                     Python, Tesseract
                 </ExperienceText>
                 <ExperienceText id="hsbc">

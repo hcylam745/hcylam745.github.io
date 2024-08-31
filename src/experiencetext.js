@@ -66,7 +66,7 @@ class ExperienceText extends Component {
     linkToWebsite(id) {
         if (id == "manulife") {
             window.location.href="https://manulife.com/";
-        } else if (id == "hsbc") {
+        } else if (id == "hsbc" || id == "hsbcdigitalinnovation") {
             window.location.href="https://www.hsbc.com/";
         } else if (id == "hkbn") {
             window.location.href="https://www.hkbnes.net/web/";
