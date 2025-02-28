@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b732fc92.css",
-    "main.js": "/static/js/main.bac58ace.js",
+    "main.js": "/static/js/main.d2333707.js",
     "static/js/496.eefed8e2.chunk.js": "/static/js/496.eefed8e2.chunk.js",
     "static/media/snake_image.png": "/static/media/snake_image.de772f429cb1bca072ee.png",
     "static/media/wordle_clone.png": "/static/media/wordle_clone.c031116477becc916eab.png",
@@ -9,11 +9,11 @@
     "static/media/overwatch_blocker.png": "/static/media/overwatch_blocker.1c82d826351e31c185ae.png",
     "index.html": "/index.html",
     "main.b732fc92.css.map": "/static/css/main.b732fc92.css.map",
-    "main.bac58ace.js.map": "/static/js/main.bac58ace.js.map",
+    "main.d2333707.js.map": "/static/js/main.d2333707.js.map",
     "496.eefed8e2.chunk.js.map": "/static/js/496.eefed8e2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b732fc92.css",
-    "static/js/main.bac58ace.js"
+    "static/js/main.d2333707.js"
   ]
 }
