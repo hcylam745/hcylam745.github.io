@@ -81,7 +81,7 @@ class NavBar extends Component {
                             Henry Chun Yin Lam
                         </div>
                         <div className="description">
-                            Hi! I'm an incoming Technology Graduate Trainee at HSBC, and Computer Science graduate from the Hong Kong University of Science and Technology.
+                            Hi! I'm a Computer Science graduate from the Hong Kong University of Science and Technology.
                         </div>
                     </div>
                     <div className="headerbuttons">
